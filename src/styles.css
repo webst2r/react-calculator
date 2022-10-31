@@ -1,0 +1,57 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-image: linear-gradient(to right, #051937, #2b2961, #633184, #a52e9a);
+}
+
+.calculator-grid {
+    display: grid;
+    margin: 5rem auto;
+    justify-content: center;
+    grid-template-columns: repeat(4, 6rem); /* 4 colunas com tamanho 6rem */
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem); 
+    /* a primeira fila tem tamanho minimo 7rem e caso o utilizador introduza bue numeros ela expande automaticamente */
+    /* de resto, vamos ter 5 filas de tamanho 6rem cada uma */
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255,255,255,0.75);
+}
+
+.calculator-grid > button:hover,
+.calculator-grid > button:focus {
+    background-color: rgba(255,255,255,0.9); /* quando passarmos o rato por cima ou clicarmos no numero fica mais branco */
+}
+
+.span-two {
+    grid-column: span 2; /* os butoes "AC" e "DEL" vão ocupar 2 colunas */
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 0.75rem;
+    word-wrap: break-word; /* passar para a proxima linha quando a palavra for muito longa */
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: rgba(255,255,255,0.75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+}
