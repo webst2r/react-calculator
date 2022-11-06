@@ -1,4 +1,4 @@
-### Simple calculator made with React (practice).
+### Simple calculator made with React (for practice).
     Used:
       -> State hook
       -> Event Listeners
